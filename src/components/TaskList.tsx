@@ -1,6 +1,7 @@
 import { FC } from 'react'
 import { useTaskContext } from "../hooks/useTaskContext"
-import { List, ListItemText, Typography } from '@mui/material';
+import { List, Typography } from '@mui/material';
+import Task from './Task';
 
 export const TaskList: FC = () => {
 
@@ -9,14 +10,15 @@ export const TaskList: FC = () => {
 
 
 
+
   return (
     <>
         <div>
-            <Typography variant='h4'>Lista de Tareas</Typography>
+            <Typography variant='h4'>Task List</Typography>
             <List>
                 {
                     tasks.map( ( task, i ) => (
-                        <ListItemText key={ i } primary={ task }/>
+                        <Task key={ i } task={ task } />
                     ))
                 }
             </List>

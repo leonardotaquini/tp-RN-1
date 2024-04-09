@@ -11,8 +11,16 @@ export const AddTask: FC = () => {
         setInputValue( e.target.value );
     }
 
+    
+    const generateId = ():number => {
+      return new Date().getTime();
+    }
+
     const handleAddTask = () => {
-        setTasks( [ ...tasks, inputValue ] );
+        setTasks([ 
+          ...tasks,
+          { id: generateId(), text: inputValue, completed: false  }
+        ]);
         setInputValue('');
     }
 

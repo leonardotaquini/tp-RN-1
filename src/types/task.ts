@@ -5,6 +5,15 @@ export type TaskProviderProps = {
 }
 
 export type TaskContextType = {
-    tasks: string[],
-    setTasks: Dispatch< SetStateAction<string[] > >
+    tasks:TaskModel[],
+    setTasks: Dispatch< SetStateAction< TaskModel[] > >,
+    updateTask: ( id: number, text: string ) => void
+    deleteTask: ( id: number ) => void
+    toggleCompleted: ( id: number ) => void
+}
+
+export type TaskModel = {
+    id: number,
+    text: string,
+    completed: boolean
 }
